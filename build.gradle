@@ -16,7 +16,7 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.28.0'
 }
 
-group 'com.nelkinda.templates' // TODO change
+group 'com.nelkinda.demo.wiremock'
 version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 13
@@ -42,6 +42,7 @@ dependencies {
     testAnnotationProcessor "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
     testCompileOnly "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
 
+    testImplementation 'com.github.tomakehurst:wiremock-jre8:2.26.3'
     testImplementation "io.cucumber:cucumber-java:$rootProject.ext.cucumberVersion"
     testImplementation "io.cucumber:cucumber-junit:$rootProject.ext.cucumberVersion"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:$rootProject.ext.cucumberVersion"
@@ -85,7 +86,7 @@ jacocoTestReport {
 }
 
 pitest {
-    targetClasses = ['com.nelkinda.template.*'] // TODO change
+    targetClasses = ['com.nelkinda.demo.wiremock.*']
     pitestVersion = '1.5.1'
     timestampedReports = false
     testPlugin = 'junit5'
